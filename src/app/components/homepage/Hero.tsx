@@ -37,9 +37,9 @@ const Hero = () => {
             console.log("Welcome to my Portfolio!");
           </div>
           <h1 className="text-whitish">M.Obaid Ullah Khan</h1>
-          <h1 className="text-brightGray">
+          <h3 className="text-brightGray text-5xl font-semibold">
             I design and build <br /> meaningful experiences.
-          </h1>
+          </h3>
         </div>
 
         <div className="mt-8">

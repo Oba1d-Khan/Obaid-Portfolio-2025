@@ -5,13 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
-// You'll need to define your nav_links or import them
-const nav_links = [
-  { title: "Home", url: "/" },
-  { title: "About", url: "/about" },
-  { title: "Projects", url: "/projects" },
-  { title: "Contact", url: "/contact" },
-];
+import { nav_links } from "@/app/constants/data";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);

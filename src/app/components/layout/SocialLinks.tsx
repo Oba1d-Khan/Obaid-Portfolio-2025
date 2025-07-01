@@ -1,6 +1,5 @@
 "use client";
 import { social_links } from "@/app/constants/data";
-import Image from "next/image";
 import Link from "next/link";
 
 const SocialLinks = () => {
@@ -10,7 +9,7 @@ const SocialLinks = () => {
         {social_links.map((link) => (
           <Link key={link.title} href={link.url} target="_blank" className=" ">
             <div>
-              <Image src={link.src} width={22} height={22} alt="link icon" />
+              <link.icon />
             </div>
           </Link>
         ))}

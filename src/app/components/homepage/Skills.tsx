@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import {
   SkillsLanguages,
   SkillsLibraries,
@@ -17,8 +18,8 @@ const Skills = () => {
           My Skills
         </h1>
         <p className="text-sm text-brightGray leading-5 tracking-wide font-firaCode">
-          As a creative technologist, I craft intuitive digital experiences
-          using a diverse set of tools and languages.
+          As a creative technologist, <br /> I craft intuitive digital
+          experiences <br /> using a diverse set of tools and languages.
         </p>
       </div>
 
@@ -27,11 +28,25 @@ const Skills = () => {
         <h5 className="text-xs text-brightGray uppercase font-semibold font-firaCode">
           Languages & Tools
         </h5>
-        <div className="grid grid-cols-5 gap-6 md:grid-cols-8 md:gap-5 lg:flex lg:gap-8 items-center p-6 font-firaCode">
+        <div className="flex flex-wrap items-center gap-4 md:gap-8 p-6 font-firaCode">
           {SkillsLanguages.map((item, idx) => (
-            <div key={idx} className="flex flex-col items-center">
-              <img src={item.src} alt={item.title} className="w-10 h-10 mb-2" />
-              <span className="text-xs text-brightGray">{item.title}</span>
+            <div
+              key={idx}
+              className="flex flex-col items-center w-20 h-20 relative group"
+            >
+              <Image
+                src={item.src}
+                alt={item.title}
+                width={40}
+                height={40}
+                className="w-10 h-10"
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL="/images/placeholder-blur.png"
+              />
+              <span className="text-xs text-brightGray opacity-0 group-hover:opacity-100 transition-opacity duration-200 absolute -bottom-0 left-1/2 transform -translate-x-1/2 whitespace-nowrap text-center">
+                {item.title}
+              </span>
             </div>
           ))}
         </div>
@@ -42,11 +57,25 @@ const Skills = () => {
         <h5 className="text-xs text-brightGray uppercase font-semibold">
           Libraries & Frameworks
         </h5>
-        <div className="grid grid-cols-5 md:flex gap-6 lg:gap-8 items-center p-6 ">
+        <div className="flex flex-wrap  items-center gap-8 p-6">
           {SkillsLibraries.map((item, idx) => (
-            <div key={idx} className="flex flex-col items-center">
-              <img src={item.src} alt={item.title} className="w-10 h-10 mb-2" />
-              <span className="text-xs text-brightGray">{item.title}</span>
+            <div
+              key={idx}
+              className="flex flex-col items-center w-20 h-20 relative group"
+            >
+              <Image
+                src={item.src}
+                alt={item.title}
+                width={40}
+                height={40}
+                className="w-10 h-10"
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL="/images/placeholder-blur.png"
+              />
+              <span className="text-xs text-brightGray opacity-0 group-hover:opacity-100 transition-opacity duration-200 absolute -bottom-0 left-1/2 transform -translate-x-1/2 whitespace-nowrap text-center">
+                {item.title}
+              </span>
             </div>
           ))}
         </div>
@@ -57,11 +86,25 @@ const Skills = () => {
         <h5 className="text-xs text-brightGray uppercase font-semibold">
           Other Tools
         </h5>
-        <div className="grid grid-cols-5 md:flex gap-6 lg:gap-8 items-center p-6 ">
+        <div className="flex flex-wrap  items-center gap-8 p-6">
           {SkillsOthers.map((item, idx) => (
-            <div key={idx} className="flex flex-col items-center">
-              <img src={item.src} alt={item.title} className="w-10 h-10 mb-2" />
-              <span className="text-xs text-brightGray">{item.title}</span>
+            <div
+              key={idx}
+              className="flex flex-col items-center w-20 h-20 relative group"
+            >
+              <Image
+                src={item.src}
+                alt={item.title}
+                width={40}
+                height={40}
+                className="w-10 h-10"
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL="/images/placeholder-blur.png"
+              />
+              <span className="text-xs text-brightGray opacity-0 group-hover:opacity-100 transition-opacity duration-200 absolute -bottom-0 left-1/2 transform -translate-x-1/2 whitespace-nowrap text-center">
+                {item.title}
+              </span>
             </div>
           ))}
         </div>

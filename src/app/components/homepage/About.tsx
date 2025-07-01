@@ -6,7 +6,7 @@ import { TbCricket } from "react-icons/tb";
 
 const About = () => {
   return (
-    <section className=" py-14">
+    <section className=" py-14 px-4 md:px-0">
       <div className="flex flex-col items-center gap-4 py-20 text-center font-semibold tracking-wide">
         <h5 className="text-xs text-transparentGray uppercase font-firaCode">
           Synopsis

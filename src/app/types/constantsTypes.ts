@@ -6,7 +6,7 @@ export type NavLinksType = {
 export type SocialLinksType = {
   url: string;
   title: string;
-  src: string;
+  icon: any;
 };
 
 export type SkillsLogoType = {

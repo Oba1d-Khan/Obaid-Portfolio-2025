@@ -3,6 +3,9 @@ import {
   SkillsLogoType,
   SocialLinksType,
 } from "@/app/types/constantsTypes";
+import { FaWhatsapp } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { FiGithub, FiLinkedin } from "react-icons/fi";
 
 export const nav_links: NavLinksType[] = [
   { url: "/", title: "Home" },
@@ -14,22 +17,22 @@ export const social_links: SocialLinksType[] = [
   {
     url: "https://github.com/Oba1d-Khan",
     title: "Github",
-    src: "/icons/github-icon.svg",
+    icon: FiGithub,
   },
   {
     url: "https://www.linkedin.com/in/oba1d-khan-4b9698214/",
     title: "LinkedIn",
-    src: "/icons/linkedin-icon.svg",
+    icon: FiLinkedin,
   },
   {
     url: "https://twitter.com/Obaid_Talks",
     title: "X",
-    src: "/icons/x-icon.svg",
+    icon: FaXTwitter,
   },
   {
     url: "https://web.whatsapp.com/",
     title: "Whatsapp",
-    src: "/icons/whatsapp-icon.svg",
+    icon: FaWhatsapp,
   },
 ];
 

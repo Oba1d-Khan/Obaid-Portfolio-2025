@@ -70,9 +70,9 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="hidden lg:block ">
+      <div className="hidden ">
         <div className="bg-gray-50 relative group dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-dutchBlack dark:border-white/[0.2] border-black/[0.1] w-[25rem] h-auto rounded-2xl p-6 border transition-shadow duration-300 hover:shadow-lg flex flex-col">
-          <div className="w-full">
+          {/* <div className="w-full">
             <Image
               src="/images/dp-bw.jpg"
               height={1000}
@@ -81,7 +81,7 @@ const Hero = () => {
               alt="obaid-pic"
               loading="lazy"
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

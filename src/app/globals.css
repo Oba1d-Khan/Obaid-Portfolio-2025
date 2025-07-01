@@ -1,26 +1,295 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  /* Portfolio Fonts */
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-fira-code: 'Fira Code', monospace;
+  --font-sans: var(--font-montserrat);
+  --font-heading: var(--font-fira-code);
+
+  /* Portfolio Colors */
+  --color-background: #060708;
+  --color-foreground: #BFBFBF;
+  --color-cool-cyan: #79D4EF;
+  --color-whitish: #BFBFBF;
+  --color-bright-gray: #7F919B;
+  --color-transparent-gray: #888889;
+  --color-carbon: #0E0F11;
+  --color-dutch-black: #060708;
+
+  /* Gradients */
+  --body-gradient: linear-gradient(258deg, rgba(1, 32, 40, 1) 5%, rgba(2, 11, 11, 1) 19%, rgba(2, 9, 6, 1) 36%, rgba(1, 16, 17, 1) 59%, rgba(3, 2, 11, 1) 75%, rgba(3, 23, 4, 1) 100%);
+
+  /* Breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-cool-cyan: #79D4EF;
+  --color-whitish: #BFBFBF;
+  --color-bright-gray: #7F919B;
+  --color-transparent-gray: #888889;
+  --color-carbon: #0E0F11;
+  --color-dutch-black: #060708;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-fira-code: 'Fira Code', monospace;
+  --body-gradient: linear-gradient(258deg, rgba(1, 32, 40, 1) 5%, rgba(2, 11, 11, 1) 19%, rgba(2, 9, 6, 1) 36%, rgba(1, 16, 17, 1) 59%, rgba(3, 2, 11, 1) 75%, rgba(3, 23, 4, 1) 100%);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  .bg-body-gradient {
+    background: var(--body-gradient);
+  }
+
+  .text-coolCyan {
+    color: var(--color-cool-cyan);
+  }
+
+  .text-whitish {
+    color: var(--color-whitish);
+  }
+
+  .text-brightGray {
+    color: var(--color-bright-gray);
+  }
+
+  .text-transparentGray {
+    color: var(--color-transparent-gray);
+  }
+
+  .bg-carbon {
+    background-color: var(--color-carbon);
+  }
+
+  .bg-dutchBlack {
+    background-color: var(--color-dutch-black);
+  }
+
+  .bg-coolCyan {
+    background-color: var(--color-cool-cyan);
+  }
+
+  .font-montserrat {
+    font-family: var(--font-montserrat), sans-serif;
+  }
+
+  .font-firaCode {
+    font-family: var(--font-fira-code), monospace;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+@layer base {
+  body {
+    background: var(--body-gradient);
+    color: var(--color-whitish);
+    font-family: var(--font-montserrat), var(--font-sans), sans-serif;
+  }
+}
+
+@layer components {
+  .container {
+    @apply w-full max-w-[85vw] mx-auto px-4 md:px-8;
+    /* 85vw for desktop, padding for mobile, centered */
+  }
+
+  .section-wrapper {
+    @apply w-full max-w-[85vw] mx-auto px-4 md:px-8 flex flex-col gap-12;
+    /* Responsive, centered, with vertical spacing */
+  }
+
+  .section-content {
+    @apply w-full max-w-5xl mx-auto px-2 md:px-6;
+    /* For inner content, slightly narrower for readability */
+  }
+}
+
+
+/* Enhanced Ultra-Fast Animations */
+@utility animate-fadeIn {
+  animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility animate-slideUp {
+  animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility animate-slideDownSoft {
+  animation: slideDownSoft 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideDownSoft {
+  0% {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility animate-scaleIn {
+  animation: scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@utility animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@utility animate-pulse-soft {
+  animation: pulseSoft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulseSoft {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@utility animate-bounce-gentle {
+  animation: bounceGentle 2s infinite;
+}
+
+@keyframes bounceGentle {
+
+  0%,
+  20%,
+  53%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40%,
+  43% {
+    transform: translateY(-8px);
+  }
+
+  70% {
+    transform: translateY(-4px);
+  }
+
+  90% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Performance optimizations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hardware acceleration for animations */
+.group:hover *,
+.animate-fadeIn,
+.animate-slideUp,
+.animate-slideDownSoft,
+.animate-scaleIn,
+.animate-float,
+.animate-pulse-soft,
+.animate-bounce-gentle {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+}
+
+/* Smooth transitions for interactive elements */
+.transition-smooth {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-bounce {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Optimized hover states */
+.hover-lift:hover {
+  transform: translateY(-2px) translateZ(0);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05) translateZ(0);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(108, 94, 83, 0.3);
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

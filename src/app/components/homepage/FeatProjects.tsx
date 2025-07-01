@@ -24,7 +24,7 @@ const FeatProjects = () => {
       </div>
 
       <div className="md:max-w-[60vw] mx-auto flex flex-col gap-10 md:flex-row  justify-items-between items-center">
-        {projectListing.slice(2, 4).map((item) => (
+        {projectListing.slice(0, 2).map((item) => (
           <ProjectCard
             key={item.title}
             title={item.title}

@@ -68,6 +68,18 @@ export const SkillsOthers: SkillsLogoType[] = [
 
 export const projectListing = [
   {
+    title: "Communication Help | Blog",
+    src: "/images/communication-help.png",
+    link: "https://communicationhelp.vercel.app/",
+    githubLink: "personal-blog/src at main · Oba1d-Khan/personal-blog",
+  },
+  {
+    title: "FoodByte | Restaurant Dashboard",
+    src: "/images/foodbyte.png",
+    link: "https://foodbyte-pi.vercel.app/",
+    githubLink: "https://github.com/Oba1d-Khan/foodbyte-restaurant-dashboard",
+  },
+  {
     title: "Fashion Store",
     src: "/images/redux-store.png",
     link: "https://redux-shopping-store-xi.vercel.app/",
@@ -79,12 +91,7 @@ export const projectListing = [
     link: "https://mini-store-mu.vercel.app/",
     githubLink: "https://github.com/Oba1d-Khan/MiniStore-",
   },
-  {
-    title: "FoodByte | Restaurant Dashboard",
-    src: "/images/foodbyte.png",
-    link: "https://foodbyte-pi.vercel.app/",
-    githubLink: "https://github.com/Oba1d-Khan/foodbyte-restaurant-dashboard",
-  },
+
   {
     title: "Albino Saas Landing Page",
     src: "/images/albino.png",
